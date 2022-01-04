@@ -12,7 +12,9 @@ const routes: Routes = [
   {
     path: "couriers",
     loadChildren: () =>
-      import("./modules/couriers/couriers.module").then((m) => m.CouriersModule),
+      import("./modules/couriers/couriers.module").then(
+        (m) => m.CouriersModule
+      ),
   },
   {
     path: "users",
@@ -24,7 +26,16 @@ const routes: Routes = [
     loadChildren: () =>
       import("./modules/login/login.module").then((m) => m.LoginModule),
   },
-  { path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
+  {
+    path: "home",
+    loadChildren: () =>
+      import("./modules/home/home.module").then((m) => m.HomeModule),
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
